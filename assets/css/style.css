@@ -5,6 +5,8 @@ body {
   color: #240046;
 }
 
+/* User input area styles */
+
 textarea {
   background: transparent;
   border: none;
@@ -22,6 +24,8 @@ textarea:focus {
   box-shadow: 0 0 5pt 3pt #e0aaff;
 }
 
+/* Header styles  */
+
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -34,22 +38,7 @@ textarea:focus {
   white-space: pre-wrap;
 }
 
-.time-block {
-  text-align: center;
-  border-radius: 15px;
-}
-
-.row {
-  white-space: pre-wrap;
-  height: 80px;
-  border-top: 1px solid white;
-}
-
-.hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
-}
+/* Timeblock styles triggered by JS */
 
 .past {
   background-color: #5a189a;
@@ -63,6 +52,8 @@ textarea:focus {
 .future {
   background-color: #5a189a;
 }
+
+/* Save button styles */
 
 .save-button {
   opacity: 0.5;
@@ -88,11 +79,16 @@ textarea:focus {
   width: 45px;
 }
 
+/* Footer styles */
+
 footer {
   padding: 60px;
   margin-top: 20px;
   background-color: #240046;
 }
+
+/* Media query */
+
 @media screen and (max-width: 480px) {
   textarea {
     width: 200px;
