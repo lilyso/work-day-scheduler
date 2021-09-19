@@ -1,24 +1,32 @@
 // Current day display
 $("#currentDay").append(moment().format("dddd, MMMM Do"));
 
-// console.log(test);
-
-// if textarea value does not equal null append content to textarea and save to local storage
-// if time does not equal current time or time in past dark colour & opacity textarea 0.5-75
-// if current time opacity 100% and bright colour
-//if time in future opacity 100% and dark colour
-
 var rowVal;
 var buttonTime;
+var saved;
 $(".save-button").on("click", function (e) {
   e.preventDefault();
   buttonTime = $(this).data("time");
   rowVal = $(`#time${buttonTime}`).val();
-  localStorage.setItem();
+  console.log(rowVal, buttonTime);
+
+  saved = localStorage.getItem("input");
+  if (!saved) {
+    saved = [];
+  } else {
+    saved = JSON.parse(saved);
+  }
+  saved[parseInt(buttonTime)] = rowVal;
+  console.log(saved);
+  localStorage.setItem("input", JSON.stringify(saved));
 });
 
 var timeNow = parseInt(moment().format("H"));
 var rowTime;
+saved = localStorage.getItem("input");
+if (saved) {
+  saved = JSON.parse(saved);
+}
 $(".block-time").each(function () {
   rowTime = parseInt($(this).data("time"));
   if (rowTime === timeNow) {
@@ -28,5 +36,10 @@ $(".block-time").each(function () {
     $(`#time${rowTime}`).addClass("past");
   } else if (rowTime > timeNow) {
     $(`#time${rowTime}`).addClass("future");
+  }
+  if (saved) {
+    if (saved[rowTime]) {
+      $(`#time${rowTime}`).val(saved[rowTime]);
+    }
   }
 });
