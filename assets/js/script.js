@@ -1,7 +1,7 @@
 // Current day display
 $("#currentDay").append(moment().format("dddd, MMMM Do"));
 
-// When user clicks on save button, the user input is saved into local storage for reference
+// When user clicks on save button, the user input is saved into local storage
 var rowVal;
 var buttonTime;
 var saved;
@@ -10,7 +10,9 @@ $(".save-button").on("click", function (e) {
   buttonTime = $(this).data("time");
   rowVal = $(`#time${buttonTime}`).val();
   saved = localStorage.getItem("input");
+  // Check that saved is valid
   if (!saved) {
+    //Declare blank array if invalid
     saved = [];
   } else {
     saved = JSON.parse(saved);
