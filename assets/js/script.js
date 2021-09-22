@@ -1,7 +1,7 @@
 // Current day display
 $("#currentDay").append(moment().format("dddd, MMMM Do"));
 
-// Save button event & save values into local storage
+// When user clicks on save button, the user input is saved into local storage for reference
 var rowVal;
 var buttonTime;
 var saved;
@@ -26,7 +26,7 @@ if (saved) {
 }
 
 /* Timeblock is color coded to indicate whether it is in the past, present, or future.
-If user has saved added an note/appointment previously, it will be retrived from local storage */
+If user has saved a note/appointment previously, it will be retrived from local storage */
 $(".block-time").each(function () {
   rowTime = parseInt($(this).data("time"));
   if (rowTime === timeNow) {

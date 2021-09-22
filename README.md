@@ -29,7 +29,7 @@ This is a daily work day planner where users are able to block out time for appo
 
 - User can add their appointments and notes to the schedule for business hours.
 - Current date is displayed.
-- Time blocks will show if in the past, present or future so that the user is able to see upcoming appointments clearly.
+- Time blocks will show if appointment is in the past, present or future so that the user is able to see upcoming events clearly.
 
 ## Screenshots
 
@@ -47,7 +47,7 @@ Project is: _in progress_
 
 Room for improvement:
 
-- Ability to save all notes at once. Currently, user input can only be save one at a time.
+- Ability to save all notes at once. Currently, user input can only be saved one at a time.
 
 ## Acknowledgements
 
